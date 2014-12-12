@@ -46,12 +46,14 @@ int main()
 		it = find (abundant_sums.begin() + search_start, abundant_sums.end(), i);
 		if( it != abundant_sums.end())
 		{
-			cout << i << "   " << search_start << endl;
+			//cout << i << "   " << search_start << endl;
 			++search_start;
 		} else {
-			cout << i << "   " << search_start << endl;
+			//cout << i << "   " << search_start << endl;
 			retval += i;
 		}
 	}
 	cout << retval << endl;
 }
+
+// 4179871
