@@ -25,7 +25,8 @@ void generatePrimes(const long i, vector<long> &v)
 
 inline bool isPrime(unsigned long i)
 {
-	for(long j=2;j*j<=i;++j)
+	if(i%2==0) return false;
+	for(long j=3;j*j<=i;j+=2)
 	{
 		if(i%j==0) return false;
 	}

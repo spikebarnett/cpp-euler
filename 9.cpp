@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int main()
@@ -13,7 +12,7 @@ int main()
 			int c=m*m+n*n;
 			if(a+b+c==1000)
 			{
-				cout << m << "\t" << n << endl << a*b*c << endl;
+				cout << a*b*c << endl;
 				return 0;
 			}
 		}

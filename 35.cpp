@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 vector<int> primes;
@@ -24,13 +25,13 @@ int concat(int a, int b)
 	return a + b;
 }
 
-void generatePrimes(int a, int b)
+void generatePrimes(unsigned a, unsigned b)
 {
 	bool notPrime[b+1] = { };
-	for(int j=2;j<=b;j++)
+	for(unsigned j=2;j<=b;j++)
 	{
 		if(notPrime[j]) continue;
-		for(int k=j;k<=b; k+=j) notPrime[k] = true;
+		for(unsigned k=j*j;k<=b;k+=j) notPrime[k] = true;
 		if(j>=a) primes.push_back(j);
 	}
 }

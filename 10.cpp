@@ -1,28 +1,24 @@
 #include <iostream>
 #include <algorithm>
+#include <cmath>
+#include <vector>
 using namespace std;
 
-void generatePrimes(long i, vector<long> &v)
+void generatePrimes(const unsigned long l, vector<unsigned long> &v)
 {
-	v.clear();
-	bool notPrime[i+1]={false};
-	for(long j=2;j<=i;++j)
+	v.clear(); v.reserve(int(l*log(l))); v.push_back(2);
+	bool notPrime[l+1] = {false};
+	for(unsigned long j=3;j<=l;j+=2)
 	{
 		if(notPrime[j]) continue;
-		for(long k=j+j;k<=i;k+=j)
-		{
-			if(k<=i) notPrime[k]=true;
-		}
-	}
-	for(long j=2;j<=i;++j)
-	{
-		if(!notPrime[j]) v.push_back(j);
+		for(unsigned long k=j*j;k<=l;k+=j*2) notPrime[k] = true;
+		v.push_back(j);
 	}
 }
 
 int main()
 {
-	vector<long> p;long a=0;
+	vector<unsigned long> p; long a=0;
 	generatePrimes(2000000, p);
 	for(long i:p) a+=i;
 	cout << a << endl;

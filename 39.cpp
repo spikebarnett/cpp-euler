@@ -27,4 +27,4 @@ int main()
 	cout << highIndex << endl;
 }
 
-// 932718654
+// 840
